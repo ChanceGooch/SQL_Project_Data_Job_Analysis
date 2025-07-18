@@ -18,10 +18,11 @@ This project takes a closer look at the data analyst job market to pinpoint the 
 
 # Tools I used
 For this project I used:
-- SQL: Used to query the database to reveal insights for my analysis.
-- PostgreSQL: Our chosen database management system for handling the job posting data.
-- Visual Studio Code: Used for writing and executing SQL queries.
-- Git and Github: Used to share my SQL analysis and track the progress of my project.
+- **SQL**: Used to query the database to reveal insights for my analysis.
+- **PostgreSQL:** Our chosen database management system for handling the job posting data.
+- **Visual Studio Code:** Used for writing and executing SQL queries.
+- **Git and Github:** Used to share my SQL analysis and track the progress of my project.
+- **ChatGPT:** Used as a tool to help analyze queries and visualize data.
 
 # The Analysis
 Each question and the query I used to approach them is listed below:
@@ -77,7 +78,7 @@ ORDER BY
 - **Employers:** There are a wide variety of companies offering these salaries across many different industries indicating a broad interest in data analysis.
 
 ### 2. What are the skills required for top-paying data analyst roles?
-Now that we have the top paying roles I wanted to next find the skills required for each of these roles. I did this by joining the job postings table with the skills table to find exactly what skills each of the highest paying employers were looking for.
+Next, I wanted to figure out the skills required for the highest paying roles. To do this, I joined the highest paying job query with the skills tables to figure out exactly what high paying employers are looking for in their data analysts.
 ```sql
 WITH top_paying_jobs AS (
     Select
@@ -108,18 +109,17 @@ ORDER BY
 ```
 ### Query Breakdown:
 
-Top 5 Highest Paying Data Analyst Jobs
+**Top 5 Highest Paying Data Analyst Jobs**
 | Company                | Salary      | Notable Skills                                                             |
 | ---------------------- | ----------- | -------------------------------------------------------------------------- |
 | **AT\&T**              | \$255,829.5 | pyspark, databricks, power bi, jupyter, pandas, aws, azure                 |
 | **Pinterest**          | \$232,423   | hadoop, r, tableau, sql, python                                            |
 | **Uclahealthcareers**  | \$217,000   | crystal, oracle, flow, tableau                                             |
-| **SmartAsset (Job 1)** | \$205,000   | snowflake, numpy, go, pandas, tableau, gitlab                              |
+| **SmartAsset** | \$205,000   | snowflake, numpy, go, pandas, tableau, gitlab                              |
 | **Inclusively**        | \$189,309   | snowflake, power bi, sap, azure, bitbucket, confluence, atlassian, jenkins |
 
-🧠 AT&T’s role is an outlier with a very high salary — possibly senior-level or specialist with strong data engineering & cloud stack.
 
-Top Companies by Skill Coverage
+**Top Companies by Skill Coverage**
 | Company         | Unique Skills Used                                         |
 | --------------- | ---------------------------------------------------------- |
 | **AT\&T**       | 12 (widest spread — strong across analytics & engineering) |
@@ -127,7 +127,9 @@ Top Companies by Skill Coverage
 | **SmartAsset**  | 9 (appears in two roles — both high paying)                |
 | **Motional**    | 8 (focuses on core tools and project management stack)     |
 
-Most Common Skills Across All High PPaying Jobs.
+The highest paying jobs require a wide variety of skills across multiple disciplines.
+
+**Most Common Skills Across All High Paying Jobs.**
 | Skill         | Appearances | Sample Companies                          |
 | ------------- | ----------- | ----------------------------------------- |
 | **SQL**       | 9           | AT\&T, Pinterest, SmartAsset, Inclusively |
@@ -151,11 +153,10 @@ These are essential core skills for high-paying data analyst roles. Most jobs li
 
 - Top-paying roles lean heavily into cloud platforms, data engineering (PySpark, Databricks), and modern collaboration (Jira, Gitlab).
 
-C- ompanies like AT&T, SmartAsset, Inclusively are pushing the high-end of salary expectations — especially where engineering and BI intersect.
+- Companies like AT&T, SmartAsset, and Inclusively are pushing the high-end of salary expectations — especially where engineering and BI intersect.
 
 ### 3. What are the most in-demand skills for data analysts?
-This query helps to identify the most frequently requested skills in data analyst job postings and sorts by those most requested.
-
+This query takes a broader approach to our last question and looks at the most requested skills across all data analyst roles to give a better picture of what is being asked for in the broader data analysis world.
 ```sql
 SELECT 
     skills,
@@ -173,9 +174,9 @@ ORDER BY
 ### Query Breakdown:
 - SQL and Excel top the list and are followed closely by Python. It is clear that a data analyst needs strong foundational skills related to data processing and manipulation, as well as some programming skills.
 - Tableau and PowerBI in 4th and 5th show support for a strong base in data visualization and storytelling to support decisions.
-- Removing the work from home clause from the WHERE statement reveals a similar proportion with in-person and work from home job requiring similar skills.
+- Removing the work from home clause from the WHERE statement reveals a similar proportion with in-person and work from home jobs requiring similar skills.
 ### 4. What are the top skills ordered by salary for data analysts?
-This query looks expands on the last one by checking which skills are the highest paying in the field of data analysis.
+This query looks at the data analyst skills associated with the highest average salaries.
 
 ```SQL
 SELECT 
@@ -295,5 +296,14 @@ These are valuable if you want cloud/data engineering roles without being in an 
 
 - Advanced/Niche: Explore Go, SSIS, Confluence, or BigQuery for higher-paying specialist roles.
 # What I learned
+**SQL** - Through Luke's tutorial, I was able to master common table expressions, sub queries, joins, and a host of other SQL functions to help manipulate the database to find key insights.
+
+**Other Apps** - It was also interesting to get a glimpse into a whole host of other apps, programs, and websites like VSCode, PostgreSQL, pgAdmin4, GIT, SQLiteviz, ChatGPT, and GITHub to help bring this project together.
+
+**Analyzing Data** - I feel like I got some great insights into how to properly use a set of data to create meaningful insights through Luke's questions. It makes me want to load up new databases and create questions for myself to query and analyze.
+
+**AI Power** - It was also interesting to see just how powerful ChatGPT was as a tool to help with my analysis. The way it was able to take the results of each query and help create digestable and formatted insights was such a powerful tool in my aresnal.
 
 # Conclusions
+
+This project did a great job of enhancing my SQL skills and also helped to provide me with some insights into the data analyst job market which I plan to use on my own job search in the future. It shows the need for core skills like SQL, Python, PowerBI, and Tableau, but also that advancing analysts should always be learning and looking for ways to broaden their skills to move up.

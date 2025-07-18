@@ -5,11 +5,6 @@
 - Why? Highlight the top-paying opportunities for Data Analysts.
 */
 
-select *
-FROM job_postings_fact
-limit 100
-
-
 Select
     job_id,
     job_title_short,
